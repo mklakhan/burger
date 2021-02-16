@@ -5,7 +5,12 @@ const getBurgers = () => {
     return results
 }
 
-module.export = {getBurgers}
+const insertBurger = (burger) => {
+    insertOne (burger)
+    
+}
+
+module.exports = {getBurgers}
 
 // selectAll,
 // insertOne,
