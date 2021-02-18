@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="public/assets/style.css" rel="stylesheet">
+    <link href="/public/assets/css/style.css" rel="stylesheet">
 
 
     <title>Eat-Da-Burger</title>
 </head>
 <body>{{{body}}}
+    <div class="container">
     <h1>Burgers Ordered:</h1>
     <ul id="devoured">
         {{#each data}}
         {{#unless this.devoured }}
-        <li devoured-data={{this.devoured}}>{{this.burger_name}}<button devouredbtn-data="{{this.burger_name}}" class="btn-primary" onclick="devourIt(event)" >Devour It!</button>
+        <li devoured-data={{this.devoured}}>{{this.burger_name}}<button devouredbtn-data="{{this.burger_name}}" class="btn-dark" onclick="devourIt(event)" >Devour It!</button>
         </li>
         {{/unless}}
         {{/each}}
     </ul>
-    <div>
+    </div>
+    <div class ="container">
+        <h1>Burgers Devoured:</h1>
         <ul id="devoured">
             {{#each data}}
             {{#if this.devoured }}

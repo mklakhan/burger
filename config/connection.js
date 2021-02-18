@@ -1,11 +1,17 @@
 const mysql2 = require('mysql2')
+const connection; 
 
-const connection = mysql2.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'burgers_db',
-    password: 'bootcamp'
-  });
+if (process.env.JAWSDB_URL) {
+  connection = mysql2.createConnection(process.env.JAWSDB_URL);
+  } else {
+    connection = mysql2.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'bootcamp',
+      database: 'burgers_db'
+    });
+  };
+   
 
-  
-  module.exports = connection
+connection.connect();
+module.exports = connection;
