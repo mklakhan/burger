@@ -15,18 +15,17 @@ const selectAll = async () => {
     return tableData
 }
 
-const insertOne = (burger) => {
+const insertOne = async (burger) => {
     let query = `INSERT INTO burgers (burger_name,devoured) VALUES ('${burger}',false)`
-      connection.query(query, (err, result, fields) => {
-        return console.log("Data Entered");
-    })
+      const result =  await connection.promise().query(query);
+  return result;
 }
    
-const updateOne = (burger) => {
-    let query = `UPDATE burgers SET devoured = 'true' WHERE burger_name = ${burger}`
-    connection.query(query, (err, result, fields) => {
-        return console.log("Data Entered");
-    })
+const updateOne = async (val, burger) => {
+   let query = `UPDATE burgers SET devoured="${val}" WHERE burger_name='${burger}'`;
+
+     let result = await connection.promise().query(query);
+    return result;
 }
 
 module.exports = {

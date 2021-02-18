@@ -6,11 +6,22 @@ const getBurgers = () => {
 }
 
 const insertBurger = (burger) => {
-    insertOne (burger)
+    let result = insertOne(burger)
+   return result;
     
 }
 
-module.exports = {getBurgers}
+const updateBurger = (truefalse, burger) => { 
+   let result = updateOne(truefalse, burger);
+   return result;
+}
+
+
+module.exports = {
+    getBurgers,
+    insertBurger,
+    updateBurger
+}
 
 // selectAll,
 // insertOne,

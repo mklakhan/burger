@@ -7,4 +7,5 @@ const connection = mysql2.createConnection({
     password: 'bootcamp'
   });
 
+  
   module.exports = connection

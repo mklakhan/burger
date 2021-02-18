@@ -11,12 +11,24 @@
 </head>
 <body>{{{body}}}
     <h1>Burgers Ordered:</h1>
-    <ul>
+    <ul id="devoured">
         {{#each data}}
-        <li devoured-data={{this.devoured}}>{{this.burger_name}}<button class="btn-primary type="submit">Devour It!</button>
+        {{#unless this.devoured }}
+        <li devoured-data={{this.devoured}}>{{this.burger_name}}<button devouredbtn-data="{{this.burger_name}}" class="btn-primary" onclick="devourIt(event)" >Devour It!</button>
         </li>
+        {{/unless}}
         {{/each}}
     </ul>
+    <div>
+        <ul id="devoured">
+            {{#each data}}
+            {{#if this.devoured }}
+            <li devoured-data={{this.devoured}}>{{this.burger_name}}</li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+    <script src="/public/assets/js/daburger.js"></script>
 </body>
 </html>
 
