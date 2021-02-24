@@ -7,5 +7,5 @@ Eat-Da-Burger app with MySQL, Node, Express, Handlebars and ORM, following the M
 The app lets users input the names of burgers they'd like to eat and then devour them! 
 
 
-
+App can be accessed at : https://fast-bastion-78443.herokuapp.com/
 
